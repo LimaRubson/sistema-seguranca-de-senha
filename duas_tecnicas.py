@@ -1,7 +1,7 @@
 import hashlib
 import time
 
-def encrypt_password(password, method='sha256'):
+def encrypt_password(password, method='md5'):
     """
     Criptografa a senha usando o algoritmo especificado.
     """
@@ -25,7 +25,7 @@ def encrypt_password(password, method='sha256'):
     # Retorna a representação hexadecimal da hash
     return hash_obj.hexdigest()
 
-def crack_password(encrypted_password, method='sha256'):
+def crack_password(encrypted_password, method='md5'):
     """
     Tenta quebrar a senha usando força bruta.
     """
@@ -71,7 +71,7 @@ def crack_password(encrypted_password, method='sha256'):
 # Testando as funções
 senha = input("Digite a senha (máximo de 8 caracteres): ")
 senha_criptografada = encrypt_password(senha)
-print(f"Senha criptografada usando SHA256: {senha_criptografada}")
+print(f"Senha criptografada: {senha_criptografada}")
 
-senha = input("Digite a senha a ser quebrada (criptografada usando SHA256): ")
+senha = input("Digite a senha a ser quebrada (criptografada: ")
 crack_password(senha)
